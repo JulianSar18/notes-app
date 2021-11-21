@@ -1,8 +1,9 @@
 const express = require('express');
 const path = require('path');
-const exphbs =  require('express-handlebars');
+const exphbs  =  require('express-handlebars');
 const methodOverride = require ('method-override');
 const session = require ('express-session');
+const { extname, resolve } = require('path');
 
 //initilizators
 const app = express();
@@ -10,13 +11,16 @@ require('./database')
 
 //settings
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'))
-app.engine('.hbs', exphbs.engine({
+app.set('views', path.join(__dirname, 'views'));
+var hbs = exphbs.create({
     defaultLayout: 'main',
-    layoutsDir: path.join(app.get('views'), 'layouts'),
-    partialsDir: path.join(app.get('views'), 'partials'),
-    extname: 'hbs'
-}));
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true,
+    },
+    extname: '.hbs'
+    });
+app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
 //middlewares

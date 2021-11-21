@@ -1,8 +1,8 @@
 const router = require ('express').Router();
 router.get('/users/signin', (req, res)=>{
-    res.send('signin');
+    res.render('users/signin');
 }); 
 router.get('/users/signup', (req, res)=>{
-    res.send('formulario aquí');
+    res.render('users/signup');
 }); 
 module.exports = router;
