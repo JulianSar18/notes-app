@@ -1,3 +1,4 @@
+require('dotenv').config({path: 'src/.env'})
 const express = require('express');
 const path = require('path');
 const exphbs  =  require('express-handlebars');
@@ -7,8 +8,7 @@ const { extname, resolve } = require('path');
 
 //initilizators
 const app = express();
-require('./database')
-
+require('./database');
 //settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));

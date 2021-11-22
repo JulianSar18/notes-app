@@ -1,7 +1,8 @@
+require('dotenv').config()
 const mongoose = require ('mongoose');
- 
+const uri = process.env.MONGOHOST
 try {
-    mongoose.connect('mongodb://localhost/notes-db', {
+    mongoose.connect(uri, {
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 }); 
