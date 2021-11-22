@@ -1,0 +1,41 @@
+{{#each error}}
+  <div class="alert alert-warning d-flex justify-content-between alert-danger fade show" role="alert">
+  {{text}}
+  <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h1>New Note</h1>
+    </div>
+    <div class="card-body">
+      <form action="/notes/new_note" method="post">
+        <div class="form-group">
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="Title"
+            autofocus
+          />
+        </div>
+        <br />
+        <div class="form-group">
+          <textarea
+            name="description"
+            class="form-control"
+            placeholder="Description"
+          ></textarea>
+        </div>
+        <br />
+        <div class="form-group">
+          <button class="btn btn-primary w-100" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
