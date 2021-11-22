@@ -28,7 +28,7 @@ router.get("/notes", async(req, res) => {
   res.render('notes/all_notes', {notes})
 });
 router.get("/notes/edit/:_id", async(req, res)=>{
-    const note = Notes.findById(req.params._id);
+    const note = await Notes.findById(req.params._id);
     res.render('notes/edit_note', {note});
 });
 
