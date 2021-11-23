@@ -23,3 +23,35 @@ body {
     width: 20rem;
     background-color: #E4F5EB;
 }
+
+.login-form-2{
+  padding: 5%;
+  background: #83bcfa;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+} 
+.login-form-2 h3{
+  text-align: center;
+  color: #fff;
+}
+.login-container form{
+  padding: 10%;
+}
+.btnSubmit
+{
+  width: 30%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+.login-form-2 .btnSubmit{
+  font-weight: 600;
+  color: #03428a;
+  background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
